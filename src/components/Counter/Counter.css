@@ -1,0 +1,50 @@
+
+.counter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-color: #e8eaf6; 
+}
+
+.counter-container {
+  background-color: #f7f7f7;
+  padding: 40px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.count {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.button-group button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.button-group button:first-child {
+  background-color: #4caf50;
+  color: white;
+}
+
+.button-group button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.button-group button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
