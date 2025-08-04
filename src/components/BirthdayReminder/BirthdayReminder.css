@@ -1,0 +1,120 @@
+/* BirthdayReminder.css */
+:root {
+  --primary-color: #8e44ad;
+  --secondary-color: #9b59b6;
+  --accent-color: #e74c3c;
+  --text-color: #2c3e50;
+  --light-color: #ecf0f1;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+}
+
+.birthday-container {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.birthday-container h2 {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.birthday-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+.birthday-list {
+  list-style-type: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.birthday-card {
+  background: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.birthday-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.birthday-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+}
+
+.birthday-card h3 {
+  margin: 0 0 1rem 0;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.birthday-card p {
+  margin: 0.5rem 0;
+  color: var(--text-color);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.birthday-card p::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  margin-right: 8px;
+}
+
+.birthday-count {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .birthday-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .birthday-container h2 {
+    font-size: 1.8rem;
+  }
+}

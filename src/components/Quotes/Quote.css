@@ -1,0 +1,121 @@
+/* Quote.css */
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4895ef;
+  --text-color: #2b2d42;
+  --light-color: #f8f9fa;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.quote-box {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  position: relative;
+  padding: 0 1.5rem;
+}
+
+.quote-text::before,
+.quote-text::after {
+  content: '"';
+  font-size: 3rem;
+  color: var(--accent-color);
+  opacity: 0.3;
+  position: absolute;
+}
+
+.quote-text::before {
+  top: -1.5rem;
+  left: -0.5rem;
+}
+
+.quote-text::after {
+  bottom: -3rem;
+  right: -0.5rem;
+}
+
+.quote-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.quote-buttons button {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.quote-buttons button:hover {
+  background-color: var(--secondary-color);
+}
+
+.quote-counter {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .quote-box {
+    padding: 1.5rem;
+  }
+  
+  .quote-text {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
+  
+  .quote-buttons {
+    flex-direction: column;
+  }
+  
+  .quote-buttons button {
+    width: 100%;
+  }
+}

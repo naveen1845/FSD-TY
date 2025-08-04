@@ -1,58 +1,174 @@
+/* Bmi.css */
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4cc9f0;
+  --success-color: #4ad66d;
+  --warning-color: #f8961e;
+  --danger-color: #f94144;
+  --text-color: #2b2d42;
+  --light-color: #f8f9fa;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+}
+
 .bmi-container {
-  max-width: 400px;
-  margin: 60px auto;
-  padding: 30px;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
+  max-width: 450px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  background: white;
+  box-shadow: var(--shadow);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .bmi-container h2 {
-  margin-bottom: 20px;
-  color: #333;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+}
+
+.bmi-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
 }
 
 .bmi-container label {
   display: block;
-  margin: 15px 0 5px;
+  margin-bottom: 0.5rem;
   font-weight: 500;
-  text-align: left;
+  color: var(--text-color);
+  font-size: 0.95rem;
 }
 
 .bmi-container input {
   width: 100%;
-  padding: 10px;
+  padding: 0.8rem 1rem;
   font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+  border-radius: var(--border-radius);
+  border: 1px solid #e0e0e0;
+  background-color: var(--light-color);
+  transition: var(--transition);
+}
+
+.bmi-container input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.2);
 }
 
 .bmi-container button {
-  margin-top: 20px;
-  padding: 10px 20px;
+  width: 100%;
+  padding: 1rem;
   font-size: 1rem;
-  background-color: #4caf50;
+  font-weight: 600;
+  background-color: var(--primary-color);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.5rem;
 }
 
 .bmi-container button:hover {
-  background-color: #45a049;
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+}
+
+.bmi-container button:active {
+  transform: translateY(0);
 }
 
 .bmi-result {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  color: #333;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  background-color: var(--light-color);
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.bmi-result strong {
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
 .bmi-category {
-  font-weight: bold;
-  color: #007acc;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Category-specific colors */
+.bmi-category[data-category="Underweight"] {
+  color: var(--warning-color);
+}
+
+.bmi-category[data-category="Normal weight"] {
+  color: var(--success-color);
+}
+
+.bmi-category[data-category="Overweight"] {
+  color: var(--warning-color);
+}
+
+.bmi-category[data-category="Obesity"] {
+  color: var(--danger-color);
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .bmi-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .bmi-container h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.error-message {
+  color: var(--danger-color);
+  background-color: rgba(249, 65, 68, 0.1);
+  padding: 0.8rem;
+  border-radius: var(--border-radius);
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Prevent number input arrows */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
