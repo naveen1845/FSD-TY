@@ -8,7 +8,7 @@ import Birthday from './components/BirthdayReminder/BirthdayReminder';
 function App() {
   return (
     <div className="App">
-      <People />
+      <Bmi />
     </div>
   );
 }

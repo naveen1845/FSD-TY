@@ -76,3 +76,17 @@
 .delete-btn:hover {
   background-color: #cc0000;
 }
+
+.delete-all-btn {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-all-btn:hover {
+  background-color: #e60000;
+}

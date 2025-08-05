@@ -17,6 +17,13 @@ function Note() {
     setNotes(notes.filter((_, index) => index !== indexToDelete));
   }
 
+  // 🧹 New function to delete all notes
+  function deleteAllNotes() {
+    if (window.confirm("Are you sure you want to delete all notes?")) {
+      setNotes([]);
+    }
+  }
+
   return (
     <div className="note-container">
       <form onSubmit={addNote} className="note-form">
@@ -28,6 +35,17 @@ function Note() {
           className="note-input"
         />
         <button type="submit" className="add-note-btn">Add Note</button>
+
+        {/* 🧹 Delete All Button */}
+        {notes.length > 0 && (
+          <button 
+            type="button" 
+            onClick={deleteAllNotes} 
+            className="delete-all-btn"
+          >
+            Delete All
+          </button>
+        )}
       </form>
 
       {notes.map((note, index) => (
